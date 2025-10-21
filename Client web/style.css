@@ -1,0 +1,27 @@
+.drop-zone {
+  border: 2px dashed #ccc;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: #555;
+  background-color: #f9fafb;
+}
+
+.drop-zone:hover {
+  background-color: #eef2f7;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #1976d2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

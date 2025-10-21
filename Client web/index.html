@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contour Overlay App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-sans p-6">
+  <h1 class="text-3xl font-bold text-center text-blue-700 mb-8">🧠 Superposition de Contours</h1>
+
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Image originale :</label>
+      <div class="drop-zone" id="dropImage">Glissez l'image ici ou cliquez pour sélectionner
+        <input type="file" id="imageInput" accept="image/*" hidden />
+      </div>
+      <p id="imageName" class="text-sm text-gray-500 mt-1"></p>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Masque réel :</label>
+      <div class="drop-zone" id="dropMask">Glissez le masque ici ou cliquez pour sélectionner
+        <input type="file" id="maskInput" accept="image/*" hidden />
+      </div>
+      <p id="maskName" class="text-sm text-gray-500 mt-1"></p>
+    </div>
+
+    <div class="flex gap-4 justify-center mt-6">
+      <button onclick="submitForm()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Envoyer</button>
+      <button onclick="resetForm()" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Réinitialiser</button>
+    </div>
+
+    <div id="loader" class="loader mx-auto mt-6 hidden"></div>
+  </div>
+  <div class="preview mt-10 grid grid-cols-1 md:grid-cols-4 gap-8 justify-items-center">
+    <div>
+      <h3 class="text-center font-semibold">🖼️ Image originale</h3>
+      <img id="originalImage" class="mt-2 rounded shadow max-w-xs" />
+    </div>
+    <div>
+      <h3 class="text-center font-semibold">🎯 Masque réel</h3>
+      <img id="trueMask" class="mt-2 rounded shadow max-w-xs" />
+    </div>
+    <div>
+      <h3 class="text-center font-semibold">📌 Version U-Net++</h3>
+      <img id="resultImage1" class="mt-2 rounded shadow max-w-xs" />
+    </div>
+    <div>
+      <h3 class="text-center font-semibold">📌 Version DeepLapV3</h3>
+      <img id="resultImage2" class="mt-2 rounded shadow max-w-xs" />
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
