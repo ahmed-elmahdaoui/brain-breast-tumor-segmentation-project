@@ -73,7 +73,7 @@ CUDA 11.0+ (recommandé pour GPU)
 
 ```bash
 # Cloner le repository
-git clone https://github.com/ahmed-elmahdaoui/brain-breast-tumor-segmentation-project.git
+git clone https://github.com/ahmed-elmahdaoui/tumor-segmentation.git
 cd tumor-segmentation
 
 # Créer un environnement virtuel
